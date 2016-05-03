@@ -5,5 +5,4 @@ module.exports 	= function(app) {
 	app.post('/profiles', Profile.create);
 	app.put('/profiles/:id', Profile.update);
 	app.delete('/profiles/:id', Profile.delete);
-
 }

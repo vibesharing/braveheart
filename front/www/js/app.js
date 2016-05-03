@@ -77,6 +77,16 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
     }
   }
 })
+	
+	.state('tab.cap', {
+  url: '/cap',
+  views: {
+    'tab-cap': {
+      templateUrl: 'templates/tab-caps.html',
+      controller: 'capCtrl'
+    }
+  }
+})
 
   .state('tab.chats', {
       url: '/chats',

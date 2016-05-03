@@ -1,0 +1,18 @@
+<ion-view view-title="Caps">
+	<ion-content class="has-subheader">
+		<div class="list">
+			<label class="item item-input">
+				<input type="text" placeholder="Create A Cap" ng-model="cap.Capname">
+			</label>
+			<label class="item item-input">
+				<textarea placeholder="Short Descrption" ng-model="cap.Capdescription"></textarea>
+			</label>
+			<label class="item item-input">
+				<input type="text" placeholder="Points" ng-model="cap.Cappoints">
+			</label>
+		</div>
+		<button class="button button-block button-positive" ng-click="sendCap()">
+			Submit
+		</button>
+	</ion-content>
+</ion-view>
