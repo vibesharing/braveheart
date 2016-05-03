@@ -6,4 +6,8 @@ function ProfileCtrl($scope, $http, $state) {
 		console.log(data);
 		$http.post('http://localhost:8000/profiles', data);
 	};
+	
+		$scope.$on('$ionicView.enter', function() {
+		$scope.profile = {};
+	});
 };
