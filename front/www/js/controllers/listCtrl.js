@@ -1,12 +1,16 @@
-function listCtrl($scope, $state, $http){
-  $scope.$on('$ionicView.enter', function(){
-  $http.get('http://192.168.3.196:8000/profiles').then(function(res){
-    $scope.list = res.data;
-  });
-});
-  $scope.whichdetail = $state.params.aId;
+function listCtrl($scope, $state, $http, $stateParams){
 
-$scope.goToDetailList = function(){
-$state.go('tab.detail-list/{{profile._id}}');
-};
+  $scope.$on('$ionicView.enter', function(){
+    $http.get('http://192.168.3.196:8000/profiles').then(function(res){
+      $scope.list = res.data;
+    });
+  });
+
+  $scope.goToDetailList = function(profile){
+    $state.go('tab.detail-list', { id: profile._id});
+  };
+
+  $scope.myFilter = function (item) {
+    return item._id == $stateParams.id;
+  }
 }
