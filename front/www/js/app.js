@@ -67,6 +67,14 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
       controller: 'listCtrl'
     }
   }})
+  .state('tab.detail-cap', {
+  url: '/list/:id',
+  views:{
+    'tab-list':{
+      templateUrl:'templates/detail-cap.html',
+      controller: 'listCtrl'
+    }
+  }})
 //===================================LIST END====================>
 .state('tab.map', {
   url: '/map',
@@ -78,24 +86,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
   }
 })
 
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
 
   .state('tab.account', {
     url: '/account',

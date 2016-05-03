@@ -8,7 +8,8 @@ var profileSchema = new mongoose.Schema({
 	Description: String,
 	Geolocation: String,
 	Challenges: Object,
-  Email: String
+  Email: String,
+  LatLng: Object
 
 });
 var Profile = {
@@ -22,7 +23,8 @@ var Profile = {
 			Lastname: req.body.Lastname,
 			Interest: req.body.Interest,
 			Photo: req.body.Photo,
-			Description: req.body.Description
+			Description: req.body.Description,
+      LatLng: req.body.LatLng
 		}, function(){
 			res.sendStatus(200);
 		})
@@ -39,7 +41,8 @@ var Profile = {
 			Lastname: req.body.Lastname,
 			Interest: req.body.Interest,
 			Photo: req.body.Photo,
-			Description: req.body.Description
+			Description: req.body.Description,
+      LatLng: req.body.LatLng
 		}, function(){
 			res.sendStatus(200);
 		})

@@ -2,7 +2,7 @@ function listCtrl($scope, $state, $http, $stateParams){
 
   $scope.$on('$ionicView.enter', function(){
     $http.get('http://192.168.3.196:8000/profiles').then(function(res){
-      $scope.list = res.data;
+      $scope.listProfile = res.data;
     });
   });
 
@@ -12,5 +12,12 @@ function listCtrl($scope, $state, $http, $stateParams){
 
   $scope.myFilter = function (item) {
     return item._id == $stateParams.id;
-  }
+  };
+    $scope.goToDetailCap = function(profile){
+      $state.go('tab.detail-cap', { id: profile._id});
+    };
+
+      console.log($stateParams.id);
+
+
 }
