@@ -1,5 +1,9 @@
-function ProfileCtrl($scope, $http, $state, $cordovaCamera, $cordovaFile) {
-
+function ProfileCtrl($scope, $http, $state, $cordovaCamera, $cordovaFile, $cordovaGeolocation) {
+$scope.profile = {};
+var options = {timeout: 10000, enableHighAccuracy: true};
+$cordovaGeolocation.getCurrentPosition(options).then(function(position){
+	$scope.profile.LatLng = {lat:position.coords.latitude, lng:position.coords.longitude};
+});
 
 	$scope.sendProfile = function() {
 		var data = $scope.profile;
@@ -16,4 +20,3 @@ function ProfileCtrl($scope, $http, $state, $cordovaCamera, $cordovaFile) {
 
 
 }
-	

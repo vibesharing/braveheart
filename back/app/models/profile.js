@@ -9,10 +9,7 @@ var profileSchema = new mongoose.Schema({
 	Geolocation: String,
 	Challenges: Object,
   Email: String,
-	CapToDo: Array,
-	CapFinish: Array,
-	Points: Number
-	
+  LatLng: Object,
 
 });
 var Profile = {
@@ -27,9 +24,7 @@ var Profile = {
 			Interest: req.body.Interest,
 			Photo: req.body.Photo,
 			Description: req.body.Description,
-			CapToDo: req.body.CapToDo,
-			CapFinish: req.body.CapFinish,
-			Points: req.body.Points
+      LatLng: req.body.LatLng
 		}, function(){
 			res.sendStatus(200);
 		})
@@ -47,9 +42,7 @@ var Profile = {
 			Interest: req.body.Interest,
 			Photo: req.body.Photo,
 			Description: req.body.Description,
-			CapToDo: req.body.CapToDo,
-			CapFinish: req.body.CapFinish,
-			Points: req.body.Points
+      LatLng: req.body.LatLng
 		}, function(){
 			res.sendStatus(200);
 		})
