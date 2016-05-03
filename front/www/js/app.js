@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova', 'btford.socket-io'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -49,6 +49,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   })
+  //===================================LIST====================>
   .state('tab.list', {
     url: '/list',
     views: {
@@ -58,6 +59,36 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   })
+  .state('tab.detail-list', {
+  url: '/list/:aId',
+  views:{
+    'tab-list':{
+      templateUrl:'templates/detail-list.html',
+      controller: 'listCtrl'
+    }
+  }})
+//===================================LIST END====================>
+
+//===================================Chat====================>
+
+.state('tab.chat', {
+  url: '/chat',
+  views: {
+    'tab-chat': {
+      templateUrl: 'templates/tab-chat.html',
+      controller: 'chatCtrl'
+    }
+  }
+})
+.state('tab.detail-chat', {
+url: '/chat/:aId',
+views:{
+  'tab-chat':{
+    templateUrl:'templates/detail-chat.html',
+    controller: 'chatCtrl'
+  }
+}})
+//===================================Chat END====================>
 
   .state('tab.chats', {
       url: '/chats',

@@ -1,0 +1,21 @@
+<ion-header-bar class="bar-positive">
+  <h2 class="title">More Info</h2>
+
+</ion-header-bar>
+<ion-view>
+  <ion-content>
+    <ion-list class="list-inset">
+      <ion-item class=" item-text-wrap" ng-repeat="profile in list | filter: {_id: whichdetail}">
+        <img ng-src="../img/{{profile.firstname}}.jpg" alt="photo" style="width: 100%;" />
+
+        <h2>{{profile.Lastname}}</h2>
+        <h3>{{profile.Firstname}}</h3>
+        <p>
+          {{profile.presentation}}
+        </p>
+        <img ng-src="{{urlForImage(profile.image)}}" height="200px"/>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
