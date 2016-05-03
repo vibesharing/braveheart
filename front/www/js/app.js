@@ -60,7 +60,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
     }
   })
   .state('tab.detail-list', {
-  url: '/list/:aId',
+  url: '/list/:id',
   views:{
     'tab-list':{
       templateUrl:'templates/detail-list.html',

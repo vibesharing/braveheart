@@ -5,15 +5,14 @@
 <ion-view>
   <ion-content>
     <ion-list class="list-inset">
-      <ion-item class=" item-text-wrap" ng-repeat="profile in list | filter: {_id: whichdetail}">
-        <img ng-src="../img/{{profile.firstname}}.jpg" alt="photo" style="width: 100%;" />
+      <ion-item class=" item-text-wrap" ng-repeat="profile in list | filter:myFilter">
+        <img ng-src="../img/{{profile.Firstname}}.jpg" alt="photo" style="width: 100%;" />
 
         <h2>{{profile.Lastname}}</h2>
         <h3>{{profile.Firstname}}</h3>
         <p>
           {{profile.presentation}}
         </p>
-        <img ng-src="{{urlForImage(profile.image)}}" height="200px"/>
 
       </ion-item>
     </ion-list>
