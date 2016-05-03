@@ -1,5 +1,4 @@
 angular.module('starter.services', [])
-.service('socket',socket)
 
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
