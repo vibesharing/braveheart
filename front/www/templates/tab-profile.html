@@ -2,24 +2,24 @@
 	<ion-content class="has-subheader">
 		<div class="list">
 			<label class="item item-input item-stacked-label">
-				<span class="input-label" ng-model="profile.firstname">First Name</span>
-				<input type="text" placeholder="John">
+				<span class="input-label" >First Name</span>
+				<input type="text" placeholder="John" ng-model="profile.Firstname">
 			</label>
 			<label class="item item-input item-stacked-label">
-				<span class="input-label" ng-model="profile.lastname">Last Name</span>
-				<input type="text" placeholder="Suhr">
+				<span class="input-label" >Last Name</span>
+				<input type="text" placeholder="Suhr" ng-model="profile.Lastname">
 			</label>
 			<label class="item item-input item-stacked-label">
-				<span class="input-label" ng-model="profile.interest">Interest</span>
-				<input type="text" placeholder="Suhr">
+				<span class="input-label" >Interest</span>
+				<input type="text" placeholder="Suhr" ng-model="profile.Interest">
 			</label>
 			<label class="item item-input item-stacked-label">
-				<span class="input-label"ng-model="profile.email">Email</span>
-				<input type="text" placeholder="john@suhr.com">
+				<span class="input-label" >Email</span>
+				<input type="text" placeholder="john@suhr.com" ng-model="profile.Email">
 			</label>
 			<label class="item item-input item-stacked-label">
-				<span class="input-label" ng-model="profile.description">Description</span>
-				<textarea placeholder="Description" ng-model="profile.description"></textarea>
+				<span class="input-label">Description</span>
+				<textarea placeholder="Description" ng-model="profile.Description"></textarea>
 			</label>
 		</div>
 		<button class="button button-full button-positive" ng-click="sendProfile()">
