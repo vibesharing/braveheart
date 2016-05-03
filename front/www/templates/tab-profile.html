@@ -2,7 +2,7 @@
 	<ion-content class="has-subheader">
 		<div class="list">
 			<div class="item item-thumbnail-left item-button-right" href="#">
-				<img src="../img/adam.jpg">
+				<img ng-src="{{urlForImage(profile.image)}}" style="height:50px; width:50px;"/>
 			<button class="button button-dark icon icon-left ion-ios-reverse-camera-outline" ng-click="addImage()">
 				Add Pictures
 			</button>
@@ -34,5 +34,3 @@
 
 	</ion-content>
 </ion-view>
-
-
