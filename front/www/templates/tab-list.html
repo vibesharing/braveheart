@@ -1,7 +1,8 @@
 <ion-view>
   <ion-content class="has-subheader">
     <ion-list>
-      <ion-item ng-repeat="profile in list" href="#/tab/list/{{profile._id}}">
+      <input type="text" ng-model="query" placeholder="search">
+      <ion-item ng-repeat="profile in list | filter : query" href="#/tab/list/{{profile._id}}">
         <!-- <img ng-src="{{urlForImage(profile.image)}}" height="200px"/> -->
         {{profile.Firstname}}
         <ion-option-button class="button-balanced"><i class="icon ion-chatbubbles"></i></ion-option-button>
