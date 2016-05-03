@@ -1,15 +1,20 @@
 <ion-view>
-  <ion-content class="has-subheader">
-    <ion-list>
-      <input type="text" ng-model="query" placeholder="search">
-      <ion-item ng-repeat="profile in list | filter : query" href="#/tab/list/{{profile._id}}">
-        <!-- <img ng-src="{{urlForImage(profile.image)}}" height="200px"/> -->
-        {{profile.Firstname}}
-        <ion-option-button class="button-balanced"><i class="icon ion-chatbubbles"></i></ion-option-button>
-        <ion-option-button class="button-positive" ng-click="goToDetailList()" ><i class="icon ion-person"></i></ion-option-button>
-
-
-      </ion-item>
-    </ion-list>
-  </ion-content>
+	<ion-content class="has-subheader">
+		<ion-list>
+			<div class="item item-input-inset">
+				<label class="item-input-wrapper">
+					<input type="text" ng-model="query" placeholder="Filter By Name">
+				</label>
+			</div>
+			<ion-item class="item-avatar item-icon-right" type="item-text-wrap" ng-repeat="profile in list | filter : query">
+				<img ng-src={{profile.Photo}}>
+				<h2>{{profile.Firstname}}</h2>
+				<p>{{profile.Description}}</p>
+				<ion-option-button class="button-balanced" href="#/tab/chats/{{profile._id}}"><i class="icon ion-chatbubbles"></i></ion-option-button>
+				<ion-option-button class="button-positive" ng-click="goToDetailList()" ><i class="icon ion-person">
+					</i></ion-option-button>
+				<i class="icon ion-arrow-left-a"></i>
+			</ion-item>
+		</ion-list>
+	</ion-content>
 </ion-view>

@@ -1,0 +1,7 @@
+.button.button-dark {
+	margin-top: 20px;
+}
+
+.tabs-top > .tabs, .tabs.tabs-top {
+	top: 10px;
+}
