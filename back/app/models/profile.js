@@ -7,7 +7,8 @@ var profileSchema = new mongoose.Schema({
 	Photo: String,
 	Description: String,
 	Geolocation: String,
-	Challenges: Object
+	Challenges: Object,
+  Email: String
 
 });
 var Profile = {
@@ -17,6 +18,7 @@ var Profile = {
     create: function(req, res) {
 		Profile.model.create({
 			Firstname: req.body.Firstname,
+      Email: req.body.Email,
 			Lastname: req.body.Lastname,
 			Interest: req.body.Interest,
 			Photo: req.body.Photo,
@@ -33,6 +35,7 @@ var Profile = {
 	update: function(req, res){
 		Profile.model.findByIdAndUpdate(req.params.id, {
 			Firstname: req.body.Firstname,
+			Email: req.body.Email,
 			Lastname: req.body.Lastname,
 			Interest: req.body.Interest,
 			Photo: req.body.Photo,
