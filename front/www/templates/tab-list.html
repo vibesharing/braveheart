@@ -1,8 +1,13 @@
 <ion-view>
   <ion-content class="has-subheader">
     <ion-list>
-      <ion-item ng-repeat="profile in list">
-{{profile.Firstname}}
+      <ion-item ng-repeat="profile in list" href="#/tab/list/{{profile._id}}">
+        <!-- <img ng-src="{{urlForImage(profile.image)}}" height="200px"/> -->
+        {{profile.Firstname}}
+        <ion-option-button class="button-balanced"><i class="icon ion-chatbubbles"></i></ion-option-button>
+        <ion-option-button class="button-positive" ng-click="goToDetailList()" ><i class="icon ion-person"></i></ion-option-button>
+
+
       </ion-item>
     </ion-list>
   </ion-content>
