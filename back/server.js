@@ -26,4 +26,10 @@ process.on('SIGINT', function() {
 // listen (start app with node server.js) ======================================
 server.listen(port);
 console.log('App listening on port ' + port);
-	
+app.use(function(request, response, next) {
+    response.header('Access-Control-Allow-Credentials', true);
+    response.header('Access-Control-Allow-Origin', request.headers.origin);
+    response.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    response.header('Access-Control-Allow-Headers', 'X-ACCESS_TOKEN, Access-Control-Allow-Origin, Authorization, X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+    next();
+});
