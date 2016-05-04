@@ -50,7 +50,14 @@ var User = {
 	create: function(req, res) {
 		User.model.create({
 			name: req.body.name,
-			password: req.body.password
+			password: req.body.password,
+			Firstname: req.body.Firstname,
+			Email: req.body.Email,
+			Lastname: req.body.Lastname,
+			Interest: req.body.Interest,
+			Photo: req.body.Photo,
+			Description: req.body.Description,
+			LatLng: req.body.LatLng
 		}, function(err, user) {
 			res.sendStatus(200);
 	    });
