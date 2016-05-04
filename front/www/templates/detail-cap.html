@@ -1,21 +1,23 @@
 <ion-header-bar class="bar-positive">
-  <h2 class="title">More Info</h2>
+	<h2 class="title">More Info</h2>
 
 </ion-header-bar>
 <ion-view>
-  <ion-content>
-    hola
-    <ion-list class="list-inset">
-      <ion-item class=" item-text-wrap" ng-repeat="cap in listCap">
-        <h3>{{cap.Capname}}</h3>
-        <h2>{{cap.Cappoints}}</h2>
+	<ion-content>
+		<ion-list class="list-inset">
+			<ion-item class=" item-text-wrap" ng-repeat="cap in listCap">
+				<h3>{{cap.Capname}}</h3>
+				<h2>{{cap.Cappoints}}</h2>
+				<p>{{cap.Capdescription}}</p>
+				<button class="button button-block button-positive" ng-click="addCap()">
+					Submit
+				</button>
+			</ion-item>
 
-        <p>
-          {{cap.Capdescription}}
-        </p>
-        {{profile.Firstname}}
-
-      </ion-item>
-    </ion-list>
-  </ion-content>
+			<ion-item class=" item-text-wrap" ng-repeat="profile in listProfile | filter : query">
+				<img ng-src="../img/{{profile.Firstname}}.jpg">
+				<h2>{{profile.Firstname}}</h2>
+			</ion-item>
+		</ion-list>
+	</ion-content>
 </ion-view>
