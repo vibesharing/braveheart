@@ -3,21 +3,27 @@
 
 </ion-header-bar>
 <ion-view>
-	<ion-content>
+	<ion-content class="padding">
+
+		<ion-item class=" item-text-wrap" ng-repeat="profile in listProfile |  filter:myFilter">
+<h3>	Send a CapOuPasCap to  {{profile.Firstname}}</h3>
+			<img ng-src="../img/{{profile.Firstname}}.jpg" style="height: 50px;">
+			<p>{{profile.Description}}
+
+			</p>
+
+		</ion-item>
 		<ion-list class="list-inset">
 			<ion-item class=" item-text-wrap" ng-repeat="cap in listCap">
 				<h3>{{cap.Capname}}</h3>
-				<h2>{{cap.Cappoints}}</h2>
+				<h2>{{cap.Cappoints}} Points</h2>
 				<p>{{cap.Capdescription}}</p>
-				<button class="button button-block button-positive" ng-click="addCap()">
+				<button class="button button-block button-positive" ng-click="addcap(cap)">
 					Submit
 				</button>
 			</ion-item>
 
-			<ion-item class=" item-text-wrap" ng-repeat="profile in listProfile | filter : query">
-				<img ng-src="../img/{{profile.Firstname}}.jpg">
-				<h2>{{profile.Firstname}}</h2>
-			</ion-item>
+
 		</ion-list>
 	</ion-content>
 </ion-view>
