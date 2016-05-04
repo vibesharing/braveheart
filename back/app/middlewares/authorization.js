@@ -5,11 +5,12 @@
 var jwt = require('jsonwebtoken');
 
 exports.user = {
-    
+
 	hasAuthorization: function (req, res, next) {
         console.log(req.headers.authorization);
-        if (req.headers.authorization){
-            jwt.verify(req.headers.authorization, 'tokenHackpartSecret', function(err, decoded) { 
+        next();
+        /*if (req.headers.authorization){
+            jwt.verify(req.headers.authorization, 'tokenHackpartSecret', function(err, decoded) {
                 if (err)
                     return res.sendStatus(403);
                 else
@@ -17,6 +18,6 @@ exports.user = {
             });
         }else{
             return res.sendStatus(403);
-        }
+        }*/
  	}
 };

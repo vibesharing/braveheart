@@ -4,5 +4,6 @@ module.exports 	= function(app) {
 	app.get('/profiles', Profile.findAll);
 	app.post('/profiles', Profile.create);
 	app.put('/profiles/:id', Profile.update);
+	app.put('/profiles/addCap/:id', Profile.addCap);
 	app.delete('/profiles/:id', Profile.delete);
 }
