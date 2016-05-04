@@ -3,7 +3,8 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope) {})
 .controller('mapCtrl', mapCtrl)
 .controller('capCtrl', capCtrl)
-
+.controller('accountController', accountController)
+.controller('loginController', loginController)
 .controller('ProfileCtrl', ProfileCtrl)
 .controller('listCtrl', listCtrl)
 .controller('ChatsCtrl', function($scope, Chats) {

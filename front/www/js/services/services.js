@@ -1,4 +1,37 @@
 angular.module('starter.services', [])
+.factory('global', function() {
+    return {
+        host : 'localhost',
+        port: 8000
+    };
+  })
+  .service('connectService',function($http, global){
+  	return {
+  		connect: function(data){
+  			return $http.post('http://' + global.host + ':' + global.port + '/api/login', data);
+  		},
+  		disconnect: function(){
+  			return $http.post('http://' + global.host + ':' + global.port + '/api/logout');
+  		}
+  	};
+  })
+
+  .service ('accountService',function($http, global) {
+  	return {
+          getById : function(id) {
+  			return $http.get('http://' + global.host + ':' + global.port + '/api/users/' + id);
+  		},
+  		update : function(id, data){
+  			return $http.put('http://' + global.host + ':' + global.port + '/api/users/' + id, data);
+  		},
+  		create : function(data) {
+  			return $http.post('http://' + global.host + ':' + global.port + '/api/users', data);
+  		},
+  		delete : function(id) {
+  			return $http.delete('http://' + global.host + ':' + global.port + '/api/users/' + id);
+  		}
+  	};
+  })
 
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array

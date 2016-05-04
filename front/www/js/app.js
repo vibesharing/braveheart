@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -37,9 +37,35 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
     abstract: true,
     templateUrl: 'templates/tabs.html'
   })
+//   .state('tabs.home', {
+//     url: '/home',
+//     views:{
+//       'home-tab':{
+//         templateUrl:'templates/home.html'
+//       }
+//     }
+// })
 
   // Each tab has its own nav history stack:
+  .state('tab.login', {
+    url: '/login',
+    views: {
+      'tab-login': {
+        templateUrl: 'templates/login.html',
+        controller: 'loginController'
+      }
+    }
+  })
 
+  .state('tab.new-account', {
+    url: '/account/new',
+    views: {
+      'tab-new-account': {
+        templateUrl: 'templates/new-account.html',
+        controller: 'accountController'
+      }
+    }
+  })
   .state('tab.profile', {
     url: '/profile',
     views: {
@@ -85,7 +111,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
     }
   }
 })
-	
+
 	.state('tab.cap', {
   url: '/cap',
   views: {
@@ -108,6 +134,24 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/profile');
+  $urlRouterProvider.otherwise('/tab/login');
+
+  $httpProvider.interceptors.push(function ($q, $location) {
+       return {
+           'request': function (config) {
+               config.headers = config.headers || {};
+               if (window.localStorage['token']) {
+                   config.headers.authorization = window.localStorage['token'];
+               }
+               return config;
+           },
+           'responseError': function (response) {
+               if (response.status === 401 || response.status === 403) {
+                   $location.path('/login');
+               }
+               return $q.reject(response);
+           }
+       };
+    });
 
 });

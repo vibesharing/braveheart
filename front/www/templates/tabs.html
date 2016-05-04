@@ -4,6 +4,15 @@ Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
+  <!-- Dashboard Tab -->
+  <ion-tab title="login"icon-on="ion-ios-list" href="#/tab/login">
+    <ion-nav-view name="tab-login"></ion-nav-view>
+  </ion-tab>
+  <!-- Dashboard Tab -->
+  <ion-tab href="#/tab/account/new">
+    <ion-nav-view name="tab-new-account"></ion-nav-view>
+  </ion-tab>
+
 
   <!-- Dashboard Tab -->
   <ion-tab title="Profile" icon-off="ion-happy-outline" icon-on="ion-happy" href="#/tab/profile">
