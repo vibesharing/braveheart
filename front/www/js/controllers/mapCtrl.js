@@ -14,13 +14,21 @@ function mapCtrl($scope, $state,$http, $cordovaGeolocation) {
     $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
     google.maps.event.addListenerOnce($scope.map, 'idle', function(){
-      $http.get('http://192.168.3.196:8000/profiles').then(function(res){
+      $http.get('http://localhost:8000/users').then(function(res){
         $scope.listProfile = res.data;
         for(var i =0; i < $scope.listProfile.length; i++){
+          var image = {
+            url: '../../img/'+$scope.listProfile[i].Firstname+'.jpg',
+            size: new google.maps.Size(200, 320),
+            origin: new google.maps.Point(0, 0)
+          };
+          var title_name = $scope.listProfile[i].Firstname;
           new google.maps.Marker({
               map: $scope.map,
               animation: google.maps.Animation.DROP,
-              position: $scope.listProfile[i].LatLng
+              position: $scope.listProfile[i].LatLng,
+              icon: image,
+              draggable:true,
           });
         }
       });

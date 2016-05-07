@@ -1,5 +1,5 @@
 <ion-header-bar class="bar-positive">
-	<h2 class="title">More Info</h2>
+	<h2 class="title" style="text-align:center;">Give a CapOuPasCap</h2>
 
 </ion-header-bar>
 <ion-view>
@@ -13,13 +13,13 @@
 			</p>
 
 		</ion-item>
-		<ion-list class="list-inset">
+		<ion-list class="card">
 			<ion-item class=" item-text-wrap" ng-repeat="cap in listCap">
 				<h3>{{cap.Capname}}</h3>
 				<h2>{{cap.Cappoints}} Points</h2>
 				<p>{{cap.Capdescription}}</p>
 				<button class="button button-block button-positive" ng-click="addcap(cap)">
-					Submit
+					Defy {{profile.Firstname}}
 				</button>
 			</ion-item>
 

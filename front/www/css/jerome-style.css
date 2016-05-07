@@ -1,7 +1,9 @@
-.button.button-dark {
-	margin-top: 20px;
+.map {
+	height: 300px;
+	width: 350px;
 }
-
-.tabs-top > .tabs, .tabs.tabs-top {
-	top: 10px;
+h1:first-child, .h1:first-child, h2:first-child, .h2:first-child, h3:first-child, .h3:first-child {
+	margin-top: 0;
+	margin-left: 40px;
+	color:white;
 }

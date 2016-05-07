@@ -1,14 +1,14 @@
-function listCtrl($scope, $state, $http, $stateParams, global){
+function listCtrl($scope, $state, $http, $stateParams, global, $cordovaGeolocation){
 
 	$scope.$on('$ionicView.enter', function(){
 
 		$http.get('http://localhost:8000/users').then(function(res){
-			// $http.get('http://192.168.3.196:8000/profiles').then(function(res){
+			// $http.get('http://localhost:8000/profiles').then(function(res){
 			$scope.listProfile = res.data;
 		});
 
 		$http.get('http://localhost:8000/caps').then(function(res){
-			// $http.get('http://192.168.3.196:8000/profiles').then(function(res){
+			// $http.get('http://localhost:8000/profiles').then(function(res){
 			$scope.listCap = res.data;
 		});
 	});
@@ -35,7 +35,7 @@ function listCtrl($scope, $state, $http, $stateParams, global){
 
 };
 
-	// console.log($stateParams.id);
+
 
 
 }
