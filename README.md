@@ -1,3 +1,4 @@
 # braveheart
-2 days of Hackathon
+##36 hours of Hackathon
 Create a mobile app with ionic
+Collabaration with Hadrien Buret 
