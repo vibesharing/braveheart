@@ -12,7 +12,7 @@ angular.module('starter.services', [])
 })
 .factory('global', function() {
     return {
-        host : 'localhost',
+        host : '192.168.3.196',
         port: 8000
     };
   })

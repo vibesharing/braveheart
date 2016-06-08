@@ -14,7 +14,7 @@ function mapCtrl($scope, $state,$http, $cordovaGeolocation) {
     $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
     google.maps.event.addListenerOnce($scope.map, 'idle', function(){
-      $http.get('http://localhost:8000/users').then(function(res){
+      $http.get('http://192.168.3.196:8000/users').then(function(res){
         $scope.listProfile = res.data;
         for(var i =0; i < $scope.listProfile.length; i++){
           var image = {
@@ -27,8 +27,6 @@ function mapCtrl($scope, $state,$http, $cordovaGeolocation) {
               map: $scope.map,
               animation: google.maps.Animation.DROP,
               position: $scope.listProfile[i].LatLng,
-              icon: image,
-              draggable:true,
           });
         }
       });

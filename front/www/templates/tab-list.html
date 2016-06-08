@@ -7,7 +7,7 @@
 				</label>
 			</div>
 			<ion-item class="item-avatar item-icon-right" type="item-text-wrap" ng-repeat="profile in listProfile | filter : query">
-				<img ng-src="../img/{{profile.Firstname}}.jpg">
+				<img ng-src="img/{{profile.Firstname}}.jpg">
 				<h2>{{profile.Firstname}}</h2>
 				<p>{{profile.Description}}</p>
 				<ion-option-button class="button-balanced" ng-click="goToDetailCap(profile)" ><i class="icon ion-trophy"></i></ion-option-button>
