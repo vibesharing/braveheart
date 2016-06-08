@@ -1,4 +1,4 @@
-#  BraveHeart -- 36H Hackaton -- 2 peoples
+#  BraveHeart -- 36H Hackaton -- 2 people
 ###Introduction
 >Ionic App done 
 
